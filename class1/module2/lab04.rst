@@ -11,8 +11,8 @@ Lab Requirements
   - Working HTTPS Virtual Server with Access Policy Created in Lab 1 (Lab 1 successfully completed).
 
 
-Task - Create a Webtop resource
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Create a Webtop resource
+---------------------------------
 
 #. Expand the **Access** tab from the main menu on the left and navigate
    to **Webtops** > **Webtop Lists**.
@@ -25,8 +25,8 @@ Task - Create a Webtop resource
 
 
 
-Task - Create Webtop Item
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2: Create Webtop Item
+----------------------------
 #. Browse to **Access** > **Webtops >** **Webtop Link** and click create.
 
 
@@ -43,12 +43,10 @@ Task - Create Webtop Item
 
 
 
-Task - Add Webtop resource to existing Access Policy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 3: Add Webtop resource to existing Access Policy
+------------------------------------------------------
 
-#. Browse to **Access** > **Profiles / Policies > Access Profiles
-   (Per-Session Policies)**, click on **Edit** for **MyAccessPolicy**. A
-   new tab should open to the Visual Policy Editor for **MyAccessPolicy**.
+#. Browse to **Access** > **Profiles / Policies > Access Profiles (Per-Session Policies)**, click on **Edit** for **MyAccessPolicy**. A new tab should open to the Visual Policy Editor for **MyAccessPolicy**.
 
    |Lab4-Image4|
 
@@ -56,8 +54,7 @@ Task - Add Webtop resource to existing Access Policy
 
    |Lab4-Image5|
 
-#. Select the **Advanced Resource Assign** object. Click on the "Assignment Tab" and select the "Advanced Resource Assign"
-   radio button. Click **Add Item**.
+#. Select the **Advanced Resource Assign** object. Click on the "Assignment Tab" and select the "Advanced Resource Assign" radio button. Click **Add Item**.
 
    |Lab4-Image6|
 
@@ -68,53 +65,57 @@ Task - Add Webtop resource to existing Access Policy
 
 #. Then under the "Expression Section" click the "Add/Delete" button
 
-#. | Click on the **Webtop** tab, select the radio button for
-     **MyFullWebtop**. Click on the **Webop Links** tab, and select the radio button for **F5Rocks**
-     then click the **Update** button at the bottom of
-     the screen.
+#. Click on the **Webtop** tab, select the radio button for **MyFullWebtop**. Click on the **Webop Links** tab, and select the radio button for **F5Rocks** then click the **Update** button at the bottom of the screen.
 
    |Lab4-Image8|
 
 #. Click **Save**.
 
-#. | At the top left of the browser window, click on **Apply Access
-     Policy** , then close the tab.
+#. At the top left of the browser window, click on **Apply Access Policy** , then close the tab. Replace the Access Profile on your app-https VIP with your myaccesspolicy Access profile and set the Per-Request Policy to None
 
    |Lab4-Image9|
 
+#. Navigate to **Local Traffic** --> **Virtual Servers** --> **Virtual Server List**
 
+    .. Note:: Make sure you are in the **Common Partition**
 
+        |Lab4-Image17|
 
-Task Testing
-~~~~~~~~~~~~~~
+#. Open the **app-https** Virtual server, scroll down to the **Access Policy** section and ensure that **myaccesspolicy** has been assigned to this virtual server.
 
-#. Open a **New Incognito** web browser to the virtual server created in the previous lab
-   by navigating to **https://server1.acme.com**. You will be presented
-   with a Logon page similar to the one from the last lab.
+    |Lab4-Image18|
+
+Task 4: Testing
+-----------------
+
+#. Open a **New Incognito** web browser to the virtual server created in the previous lab by navigating to **https://app.acme.com**. You will be presented with a Logon page similar to the one from the last lab.
 
 #. Enter the following credentials:
 
-   Username: **user1**
-
-   Password: **user1**
+    +-------------+--------------+
+    |Username:    |**user1**     |
+    +-------------+--------------+
+    |Password:    |**user1**     |
+    +-------------+--------------+
 
 #. Click **Logon**.
 
-   This will open the APM Webtop landing page that shows the resources you
-   are allowed to access. In this lab, we've only configured one resource:
-   **F5 Rocks**, but you can add as many as you want and they will
-   appear on this Webtop page.
+   This will open the APM Webtop landing page that shows the resources you are allowed to access. In this lab, we've only configured one resource:
+
+   **F5 Rocks**, but you can add as many as you want and they will appear on this Webtop page.
 
    |Lab4-Image10|
 
 
-.. |Lab4-Image1| image:: /class1/module2/media/Lab4-Image1.png
-.. |Lab4-Image2| image:: /class1/module2/media/Lab4-Image2.png
-.. |Lab4-Image3| image:: /class1/module2/media/Lab4-Image3.png
-.. |Lab4-Image4| image:: /class1/module2/media/Lab4-Image4.png
-.. |Lab4-Image5| image:: /class1/module2/media/Lab4-Image5.png
-.. |Lab4-Image6| image:: /class1/module2/media/Lab4-Image6.png
-.. |Lab4-Image7| image:: /class1/module2/media/Lab4-Image7.png
-.. |Lab4-Image8| image:: /class1/module2/media/Lab4-Image8.png
-.. |Lab4-Image9| image:: /class1/module2/media/Lab4-Image9.png
-.. |Lab4-Image10| image:: /class1/module2/media/Lab4-Image10.png
+.. |Lab4-Image1| image:: ./media/Lab4-Image1.png
+.. |Lab4-Image2| image:: ./media/Lab4-Image2.png
+.. |Lab4-Image3| image:: ./media/Lab4-Image3.png
+.. |Lab4-Image4| image:: ./media/Lab4-Image4.png
+.. |Lab4-Image5| image:: ./media/Lab4-Image5.png
+.. |Lab4-Image6| image:: ./media/Lab4-Image6.png
+.. |Lab4-Image7| image:: ./media/Lab4-Image7.png
+.. |Lab4-Image8| image:: ./media/Lab4-Image8.png
+.. |Lab4-Image9| image:: ./media/Lab4-Image9.png
+.. |Lab4-Image10| image:: ./media/Lab4-Image10.png
+.. |Lab4-Image17| image:: ./media/Lab4-Image17.png
+.. |Lab4-Image18| image:: ./media/Lab4-Image18.png
